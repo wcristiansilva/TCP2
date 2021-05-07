@@ -1,0 +1,25 @@
+<!--
+<h3>{{produto.name | uppercase}}</h3>
+<div><span>Preço:</span> {{produto.price | currency}}</div>
+<div><span>Vegano?</span> {{produto.vegan}}</div>
+<br>
+<div>
+    <label>Nome:
+        <input type="text" [(ngModel)]="produto.name" placeholder="Nome do produto">
+    </label>
+    <br>
+    <label>Preço:
+        <input type="number" [(ngModel)]="produto.price" placeholder="Preço do produto" min="0.0" step="0.01">
+    </label>
+</div>
+-->
+
+<h2>Lista de produtos cadastrados</h2>
+<ul>
+    <li *ngFor="let prod of listaProdutos">
+        <span>{{prod.name}}</span>, por {{prod.price | currency}}
+        
+        <span *ngIf="prod.vegan"><b>- É vegano!!!</b></span>
+        <span *ngIf="!prod.vegan"><b>- Não é vegano!!!</b></span>
+    </li>
+</ul>
